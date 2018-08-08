@@ -14,10 +14,6 @@ output "web_elb" {
   value = "${aws_s3_bucket.web_elb.id}"
 }
 
-output "web_instance_1" {
-  value = "${aws_s3_bucket.web_instance_1.id}"
-}
-
-output "web_instance_2" {
-  value = "${aws_s3_bucket.web_instance_2.id}"
+output "web_instances" {
+  value = "${aws_s3_bucket.web_instances.*.id}"
 }
