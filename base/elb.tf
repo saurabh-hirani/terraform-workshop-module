@@ -3,11 +3,11 @@ resource "aws_s3_bucket" "web_elb" {
 
   tags {
     Name      = "${var.userid}-${var.workshop_tag}-${var.env}-web-elb"
-    vpc       = "${aws_s3_bucket.vpc.id}"
-    from_port = 443
-    to_port   = 443
+    vpc       = "${var.vpc_id}"
+    from_port = "${var.https_port}"
+    to_port   = "${var.https_port}"
     cidr      = "0.0.0.0/0"
-    subnet    = "${aws_s3_bucket.public_subnet.id}"
+    subnet    = "${var.public_subnet_id}"
   }
 
   versioning {

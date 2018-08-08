@@ -4,10 +4,10 @@ resource "aws_s3_bucket" "web_instances" {
 
   tags {
     Name           = "${var.userid}-${var.workshop_tag}-${var.env}-web-instance-${count.index + 1}"
-    vpc            = "${aws_s3_bucket.vpc.id}"
-    subnet         = "${aws_s3_bucket.private_subnet.id}"
-    elb            = "${aws_s3_bucket.web_elb.id}"
-    security_group = "${aws_s3_bucket.private_security_group.id}"
+    vpc            = "${var.vpc_id}"
+    subnet         = "${var.private_subnet_id}"
+    elb            = "${var.web_elb_id}"
+    security_group = "${var.security_group_id}"
   }
 
   versioning {
