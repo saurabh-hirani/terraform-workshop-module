@@ -1,2 +1,2 @@
 # terraform-workshop-module
-Terraform module for https://github.com/saurabh-hirani/terraform-workshop
+Terraform workshop module to create S3 infra
